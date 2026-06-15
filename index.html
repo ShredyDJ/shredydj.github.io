@@ -542,14 +542,14 @@
       </div>
 
       <div class="mix-card">
-        <div class="video-wrap video-thumb" data-video-id="bHpqO4H8EYA" style="background-image:url('https://img.youtube.com/vi/bHpqO4H8EYA/hqdefault.jpg')" role="button" tabindex="0" aria-label="Play Live at Sounds By The Sea">
+        <div class="video-wrap video-thumb" data-video-id="-8LTy0qkprU" data-start="13140" style="background-image:url('https://img.youtube.com/vi/-8LTy0qkprU/hqdefault.jpg')" role="button" tabindex="0" aria-label="Play Live Set — House//Minimal LA">
           <span class="play-btn" aria-hidden="true">
             <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </span>
         </div>
         <div class="mix-info">
           <span class="kicker">Live Set</span>
-          <h3>Sounds By The Sea, Oceanside</h3>
+          <h3>House//Minimal LA</h3>
         </div>
       </div>
     </div>
@@ -744,8 +744,9 @@
   document.querySelectorAll('.video-thumb').forEach(function(thumb){
     function loadVideo(){
       var id = thumb.getAttribute('data-video-id');
+      var start = thumb.getAttribute('data-start');
       var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+      iframe.src = 'https://www.youtube.com/embed/' + id + '?autoplay=1' + (start ? '&start=' + start : '');
       iframe.title = thumb.getAttribute('aria-label') || 'Video';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
